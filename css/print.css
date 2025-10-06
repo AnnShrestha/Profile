@@ -1,0 +1,53 @@
+/* Print Styles */
+@media print {
+    .hero-section {
+        min-height: auto !important;
+        padding: 2rem 0 !important;
+    }
+    
+    .navbar,
+    .back-to-top,
+    .social-links,
+    .contact-form,
+    .hero-buttons {
+        display: none !important;
+    }
+    
+    .project-card,
+    .cert-card,
+    .timeline-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000 !important;
+    }
+    
+    h1, h2, h3, h4 {
+        page-break-after: avoid;
+    }
+    
+    img {
+        max-width: 500px !important;
+    }
+    
+    .section-padding {
+        padding: 1rem 0 !important;
+    }
+    
+    .progress {
+        border: 1px solid #000;
+    }
+    
+    .progress-bar {
+        background-color: #666 !important;
+    }
+}
