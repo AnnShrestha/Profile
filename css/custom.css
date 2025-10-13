@@ -12,12 +12,44 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    background-color: #1e293b; /* Fallback color while image loads */
     background-image: url('../images/back.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: scroll; /* Better performance than fixed */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Ensure background shows by default in case JS doesn't run */
+.hero-background {
+    opacity: 1;
+}
+
+/* Alternative: High-performance gradient background */
+.hero-background-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: linear-gradient(135deg, 
+        #1e293b 0%, 
+        #334155 20%, 
+        #475569 40%, 
+        #64748b 60%, 
+        #94a3b8 80%, 
+        #cbd5e1 100%);
+    transform: translateZ(0);
     will-change: transform;
 }
+
+/* Use this class instead of .hero-background for ultra-fast loading */
 
 .hero-gradient-overlay {
     position: absolute;

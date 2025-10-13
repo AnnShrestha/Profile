@@ -15,6 +15,33 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(link);
     });
 
+    // Optimize background image loading with smooth transition
+    const heroBackground = document.querySelector('.hero-background');
+    if (heroBackground) {
+        console.log('Hero background element found, starting image preload...');
+        
+        // Ensure the CSS background image loads immediately
+        heroBackground.style.backgroundImage = "url('images/back.jpg')";
+        
+        // Create a new image to preload for better performance
+        const img = new Image();
+        img.onload = function() {
+            console.log('Background image loaded successfully');
+            // Image is loaded, ensure full opacity
+            heroBackground.style.opacity = '1';
+        };
+        img.onerror = function() {
+            console.log('Background image failed to load, using fallback');
+            // Fallback: use solid color if image fails
+            heroBackground.style.backgroundColor = '#1e293b';
+            heroBackground.style.backgroundImage = 'none';
+            heroBackground.style.opacity = '1';
+        };
+        img.src = 'images/back.jpg';
+    } else {
+        console.log('Hero background element not found');
+    }
+
     // Initialize AOS (Animate On Scroll)
     AOS.init({
         duration: 1000,
