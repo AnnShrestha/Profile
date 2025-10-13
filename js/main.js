@@ -280,20 +280,108 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Navbar background on scroll
+    // Navbar background on scroll with glassmorphism
     const navbar = document.getElementById('mainNav');
     function updateNavbar() {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.98)';
-            navbar.style.backdropFilter = 'blur(20px)';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-            navbar.style.backdropFilter = 'blur(20px)';
+            navbar.classList.remove('scrolled');
         }
     }
     
     window.addEventListener('scroll', updateNavbar);
     updateNavbar(); // Initial call
+
+    // Enhanced skill animations
+    function animateSkills() {
+        const skillItems = document.querySelectorAll('.skill-item');
+        skillItems.forEach((item, index) => {
+            const progressBar = item.querySelector('.skill-progress');
+            const circleProgress = item.querySelector('.skill-circle-progress');
+            const skillBar = item.querySelector('.skill-bar');
+            const percentage = parseInt(skillBar.getAttribute('data-width'));
+            
+            // Add animation class for shimmer effect
+            setTimeout(() => {
+                item.classList.add('animate');
+            }, index * 200);
+            
+            // Animate progress bar
+            setTimeout(() => {
+                progressBar.style.width = percentage + '%';
+            }, index * 200 + 300);
+            
+            // Animate circular progress
+            const circumference = 2 * Math.PI * 25; // radius = 25
+            const strokeDashoffset = circumference - (percentage / 100) * circumference;
+            
+            setTimeout(() => {
+                circleProgress.style.strokeDashoffset = strokeDashoffset;
+            }, index * 200 + 300);
+        });
+    }
+
+    // Enhanced skill section observer (replacing the old one)
+    const enhancedSkillsSection = document.querySelector('#skills');
+    if (enhancedSkillsSection) {
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkills();
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        skillsObserver.observe(enhancedSkillsSection);
+    }
+
+    // Enhanced scroll animations for all sections
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                
+                // Add stagger animation to child elements
+                const children = entry.target.querySelectorAll('.card, .project-card, .cert-card, .contact-card, .timeline-item, .education-item');
+                children.forEach((child, index) => {
+                    setTimeout(() => {
+                        child.style.opacity = '1';
+                        child.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections for enhanced animations
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        sectionObserver.observe(section);
+    });
+
+    // Add parallax effect to hero section
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            const particles = heroSection.querySelectorAll('.particle');
+            
+            particles.forEach((particle, index) => {
+                const speed = (index + 1) * 0.1;
+                particle.style.transform = `translateY(${rate * speed}px)`;
+            });
+        });
+    }
 
     // Mobile menu handling
     const navbarToggler = document.querySelector('.navbar-toggler');

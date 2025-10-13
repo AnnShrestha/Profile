@@ -70,10 +70,10 @@
     </div>
 
     <!-- Enhanced Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glassmorphism-nav" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <span class="brand-text">AS</span>
+                <span class="brand-text">Annan Shrestha</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -97,6 +97,10 @@
     <main id="main-content">
         <!-- Enhanced Hero Section -->
         <section id="home" class="hero-section">
+            <!-- Background Image -->
+            <div class="hero-background">
+                <div class="hero-gradient-overlay"></div>
+            </div>
             <div class="container">
                 <div class="row align-items-center min-vh-100">
                     <div class="col-lg-6" data-aos="fade-right">
@@ -122,11 +126,6 @@
                             <a href="https://linkedin.com/in/annan-shrestha" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                             <a href="https://github.com/AnnShrestha" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
                             <a href="mailto:annanshrestha1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-left">
-                        <div class="hero-image">
-                            <img src="images/about-me1.png" alt="GIS Specialist Illustration" class="img-fluid" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -230,22 +229,14 @@
                         <div class="skill-item">
                             <div class="d-flex justify-content-between mb-2">
                                 <h5>Python Programming</h5>
-                                <span class="badge bg-success">92%</span>
                             </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success" style="width: 92%" data-width="92" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <small class="text-muted mt-2 d-block">ArcPy, GeoPandas, NumPy, Pandas, Matplotlib, Xarray, Docker</small>
+                            <small class="text-muted mt-2 d-block">ArcPy, GeoPandas, NumPy, Pandas, Matplotlib, Xarray, Docker, Dask</small>
                         </div>
                     </div>
                     <div class="col-lg-4 mb-4" data-aos="fade-left">
                         <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h5>GIS Software </h5>
-                                <span class="badge bg-success">95%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success" style="width: 95%" data-width="95" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-header d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="skill-title">GIS Software</h5>
                             </div>
                             <small class="text-muted mt-2 d-block">Spatial analysis, Cartography, Model builder, Geoprocessing, Data Engineering</small>
                         </div>
@@ -256,36 +247,24 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-4 mb-4" data-aos="fade-left">
                         <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h5>Spatial Databases (PostGIS, SpatiaLite)</h5>
-                                <span class="badge bg-success">82%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success" style="width: 82%" data-width="82" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-header d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="skill-title">Spatial Databases</h5>
                             </div>
                             <small class="text-muted mt-2 d-block">Spatial queries, Database design, Geodatabase management</small>
                         </div>
                     </div>
                     <div class="col-lg-4 mb-4" data-aos="fade-left">
                         <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h5>Remote Sensing & Image Analysis</h5>
-                                <span class="badge bg-success">88%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success" style="width: 88%" data-width="88" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-header d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="skill-title">Remote Sensing & Image Analysis</h5>
                             </div>
                             <small class="text-muted mt-2 d-block">ERDAS IMAGINE, ENVI, TerrSet, Satellite Imagery Processing</small>
                         </div>
                     </div>
                     <div class="col-lg-4 mb-4" data-aos="fade-left">
                         <div class="skill-item">
-                            <div class="d-flex justify-content-between mb-2">
-                                <h5>Statistical Analysis (R, SPSS)</h5>
-                                <span class="badge bg-success">85%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success" style="width: 85%" data-width="85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="skill-header d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="skill-title">Statistical Analysis</h5>
                             </div>
                             <small class="text-muted mt-2 d-block">Spatial Statistics, Regression Analysis, Data Modeling</small>
                         </div>
@@ -845,7 +824,7 @@
                         <a href="https://facebook.com/dial.annan" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://instagram.com/annanstha" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <p class="mb-0">&copy; 2025 Annan Shrestha. All rights reserved. | GIS Specialist & Spatial Analyst</p>
+                    <p class="mb-0">&copy; 2025 Annan Shrestha. All rights reserved. | GIS & Spatial Analyst</p>
                 </div>
             </div>
         </div>
