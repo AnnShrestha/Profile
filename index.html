@@ -4,9 +4,13 @@
     <title>Annan Shrestha - GIS & Spatial Analyst Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Annan Shrestha - Geographic Information Science professional specializing in spatial analysis, remote sensing, and environmental mapping. MS GIS student at Clark University.">
+    <meta name="description" content="Annan Shrestha - MS GIS student at Clark University with 5+ years experience in spatial analysis, remote sensing, and environmental mapping. Expert in ArcGIS, Python, and PostGIS.">
     <meta name="keywords" content="GIS, Geographic Information Science, Remote Sensing, Spatial Analysis, Environmental Mapping, ArcGIS, Python, PostGIS">
     <meta name="author" content="Annan Shrestha">
+    
+    <!-- Geographic Location -->
+    <meta name="geo.region" content="US-MA">
+    <meta name="geo.placename" content="Worcester">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -53,15 +57,17 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- Preload background image for faster loading -->
-    <link rel="preload" href="images/back.jpg" as="image" type="image/jpeg">
+    <link rel="preload" href="images/back.jpg" as="image" type="image/jpeg" fetchpriority="high">
     
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 <body>
     <!-- Skip Navigation Link for Accessibility -->
@@ -73,7 +79,7 @@
     </div>
 
     <!-- Enhanced Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glassmorphism-nav" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glassmorphism-nav" id="mainNav" role="navigation" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand" href="#home">
                 <span class="brand-text">Annan Shrestha</span>
@@ -111,21 +117,21 @@
                         <h1 class="display-3 fw-bold mb-4">
                             I'm <span class="text-gradient">Annan Shrestha</span>
                         </h1>
-                        <div class="typing-container mb-4">
+                        <div class="typing-container mb-4" role="status" aria-live="polite">
                             <h3 class="typing-text">
                                 <span class="typed-text"></span>
-                                <span class="cursor">|</span>
+                                <span class="cursor" aria-hidden="true">|</span>
                             </h3>
                         </div>
                         <p class="lead mb-4">
                             Geographic Information Science specialist with expertise in spatial analysis, 
                             remote sensing, and environmental mapping. Currently pursuing MS in GIS at Clark University.
                         </p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary btn-lg me-3">Get In Touch</a>
+                        <div class="hero-buttons d-flex flex-column flex-sm-row gap-3">
+                            <a href="#contact" class="btn btn-primary btn-lg">Get In Touch</a>
                             <a href="#projects" class="btn btn-outline-primary btn-lg">View Projects</a>
                         </div>
-                        <div class="social-links mt-4">
+                        <div class="social-links mt-4 d-flex flex-wrap gap-3">
                             <a href="https://linkedin.com/in/annan-shrestha" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                             <a href="https://github.com/AnnShrestha" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
                             <a href="mailto:annanshrestha1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
@@ -147,7 +153,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-4 d-flex justify-content-end" data-aos="fade-right">
                         <div class="about-image position-relative me-0">
-                            <img src="images/about-me.png" alt="Annan Shrestha" class="img-fluid rounded-3 shadow" style="max-width:220px;" loading="lazy">
+                            <img src="images/about-me.png" alt="Annan Shrestha - GIS Specialist" class="img-fluid rounded-3 shadow" style="max-width:220px;" loading="eager">
                         </div>
                     </div>
                     <div class="col-lg-8" data-aos="fade-left">
@@ -536,7 +542,7 @@
                     <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/proj_1.jpg" alt="Soil Erosion Mapping" loading="lazy">
+                                <img src="images/proj_1.jpg" alt="Soil erosion mapping using RUSLE method in Bagmati Province, Nepal showing erosion rates" loading="lazy">
                                 <div class="project-overlay">
                                     <a href="https://github.com/AnnShrestha/Soil_erosion_Bagmati-Province" class="project-link" target="_blank" rel="noopener" aria-label="View Soil Erosion Mapping project">
                                         <i class="fas fa-link"></i>
@@ -557,7 +563,7 @@
                     <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/proj_2.jpg" alt="Habitat Suitability" loading="lazy">
+                                <img src="images/proj_2.jpg" alt="African elephant habitat suitability model in Tarangire National Park using GPS tracking data" loading="lazy">
                                 <div class="project-overlay">
                                     <a href="https://github.com/AnnShrestha/Habitat_Suitability" class="project-link" target="_blank" rel="noopener" aria-label="View Habitat Suitability project">
                                         <i class="fas fa-link"></i>
@@ -578,7 +584,7 @@
                     <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/proj_3.jpg" alt="Flood Modeling" loading="lazy">
+                                <img src="images/proj_3.jpg" alt="Flood overland flow modeling and risk assessment map for West Rapti Basin" loading="lazy">
                                 <div class="project-overlay">
                                     <a href="https://github.com/AnnShrestha/Flood_overland_FLow_Modelling" class="project-link" target="_blank" rel="noopener" aria-label="View Flood Modeling project">
                                         <i class="fas fa-link"></i>
@@ -599,7 +605,7 @@
                     <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/inventory.jpg" alt="Multi-hazard Mapping" loading="lazy">
+                                <img src="images/inventory.jpg" alt="Multi-hazard risk assessment and mapping for Sindhupalchowk District, Nepal" loading="lazy">
                                 <div class="project-overlay">
                                     <a href="https://github.com/AnnShrestha/Multihazard-Assessment-and-Risk-Mapping-in-Sindhupalchowk-District" class="project-link" target="_blank" rel="noopener" aria-label="View Multi-hazard Mapping project">
                                         <i class="fas fa-link"></i>
@@ -781,29 +787,41 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                        <form id="contact-form" class="contact-form">
+                        <form id="contact-form" class="contact-form" novalidate>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="name" class="visually-hidden">Your Name</label>
-                                    <input type="text" id="name" class="form-control" name="name" autocomplete="name" placeholder="Your Name" required>
+                                    <label for="name" class="form-label">Your Name <span class="text-danger">*</span></label>
+                                    <input type="text" id="name" class="form-control" name="name" autocomplete="name" placeholder="John Doe" required minlength="2" maxlength="100" aria-required="true">
+                                    <div class="invalid-feedback">Please enter your name (2-100 characters).</div>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="email" class="visually-hidden">Your Email</label>
-                                    <input type="email" id="email" class="form-control" name="email" autocomplete="email" placeholder="Your Email" required>
+                                    <label for="email" class="form-label">Your Email <span class="text-danger">*</span></label>
+                                    <input type="email" id="email" class="form-control" name="email" autocomplete="email" placeholder="john@example.com" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" aria-required="true">
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
                                 </div>
                             </div>
+                            
+                            <!-- Honeypot field for spam prevention -->
+                            <div class="d-none" aria-hidden="true">
+                                <label for="website">Website</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            
                             <div class="mb-3">
-                                <label for="subject" class="visually-hidden">Subject</label>
-                                <input type="text" id="subject" class="form-control" name="subject" autocomplete="off" placeholder="Subject" required>
+                                <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                                <input type="text" id="subject" class="form-control" name="subject" autocomplete="off" placeholder="Project Inquiry" required minlength="3" maxlength="200" aria-required="true">
+                                <div class="invalid-feedback">Please enter a subject (3-200 characters).</div>
                             </div>
                             <div class="mb-3">
-                                <label for="message" class="visually-hidden">Your Message</label>
-                                <textarea id="message" class="form-control" name="message" autocomplete="off" rows="5" placeholder="Your Message" required></textarea>
+                                <label for="message" class="form-label">Your Message <span class="text-danger">*</span></label>
+                                <textarea id="message" class="form-control" name="message" autocomplete="off" rows="5" placeholder="Tell me about your project or inquiry..." required minlength="10" maxlength="2000" aria-required="true"></textarea>
+                                <div class="invalid-feedback">Please enter your message (10-2000 characters).</div>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-lg">
                                     <i class="fas fa-paper-plane me-2"></i>Send Message
                                 </button>
+                                <div id="form-status" class="mt-3" role="status" aria-live="polite"></div>
                             </div>
                         </form>
                     </div>
