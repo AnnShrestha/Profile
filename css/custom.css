@@ -13,7 +13,7 @@
     height: 100%;
     z-index: 0;
     background-color: #1e293b; /* Fallback color while image loads */
-    background-image: url('../images/back.jpg');
+    background-image: url('../images/earth.gif');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
