@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Hero background element found, starting image preload...');
         
         // Ensure the CSS background image loads immediately
-        heroBackground.style.backgroundImage = "url('images/back.jpg')";
+        heroBackground.style.backgroundImage = "url('images/earth.gif')";
         
         // Create a new image to preload for better performance
         const img = new Image();
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             heroBackground.style.backgroundImage = 'none';
             heroBackground.style.opacity = '1';
         };
-        img.src = 'images/back.jpg';
+        img.src = 'images/earth.gif';
     } else {
         console.log('Hero background element not found');
     }
