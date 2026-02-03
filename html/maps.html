@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Maps - Annan Shrestha | Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Annan Shrestha - GIS Maps and Cartographic Visualizations">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🗺️%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- External CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+    <style>
+        /* Fast carousel transitions */
+        #peruWildfireCarousel .carousel-item {
+            transition: transform 0.3s ease-in-out;
+        }
+        #peruWildfireCarousel .carousel-control-prev,
+        #peruWildfireCarousel .carousel-control-next {
+            transition: opacity 0.2s;
+        }
+        /* Ensure smooth and fast slide transitions */
+        .carousel-item-next,
+        .carousel-item-prev,
+        .carousel-item.active {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Instant modal opening - no fade animation */
+        #mapModal {
+            transition: none !important;
+        }
+        #mapModal .modal-dialog {
+            transition: none !important;
+        }
+        #mapModal.show {
+            display: block !important;
+            opacity: 1 !important;
+        }
+        /* Fast backdrop */
+        .modal-backdrop {
+            transition: opacity 0.1s ease-out !important;
+        }
+        /* Optimize image rendering */
+        #modalMapImage {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glassmorphism-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-text">Annan Shrestha</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="maps.html">Maps</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Maps Section -->
+        <section id="maps" class="section-padding bg-light" style="padding-top: 120px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                        <h2 class="section-title">Maps & Cartographic Work</h2>
+                        <div class="section-divider"></div>
+                        <p class="lead">A collection of maps showcasing spatial analysis, cartographic design, and geographic visualization</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Map 1: Peaks of Nepal -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="../Maps/Peaks of Nepal.jpg" alt="Peaks of Nepal - Topographic map showing major mountain peaks" loading="lazy">
+                                <div class="project-overlay">
+                                    <a href="../Maps/Peaks of Nepal.jpg" class="project-link" aria-label="View Peaks of Nepal map">
+                                        <i class="fas fa-search-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Peaks of Nepal</h4>
+                                <p>Topographic visualization of major mountain peaks in Nepal</p>
+                                <div class="project-tags">
+                                    <span class="tag">Topography</span>
+                                    <span class="tag">Cartography</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map 2: Landslide Susceptibility Map -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="../Maps/Landslide Susceptibility Map.jpg" alt="Landslide Susceptibility Map showing risk zones" loading="lazy">
+                                <div class="project-overlay">
+                                    <a href="../Maps/Landslide Susceptibility Map.jpg" class="project-link" aria-label="View Landslide Susceptibility Map">
+                                        <i class="fas fa-search-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Landslide Susceptibility Map</h4>
+                                <p>Risk assessment map showing landslide-prone areas</p>
+                                <div class="project-tags">
+                                    <span class="tag">Risk Analysis</span>
+                                    <span class="tag">Hazard Mapping</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map 3: Natural Disaster Displacement -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="../Maps/Natural Disaster Displacement.jpg" alt="Natural Disaster Displacement patterns map" loading="lazy">
+                                <div class="project-overlay">
+                                    <a href="../Maps/Natural Disaster Displacement.jpg" class="project-link" aria-label="View Natural Disaster Displacement map">
+                                        <i class="fas fa-search-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Natural Disaster Displacement</h4>
+                                <p>Spatial analysis of population displacement due to natural disasters</p>
+                                <div class="project-tags">
+                                    <span class="tag">Demographics</span>
+                                    <span class="tag">Disaster Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map 4: Labelling a Map -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="../Maps/Labelling a Map.jpg" alt="Cartographic labeling demonstration" loading="lazy">
+                                <div class="project-overlay">
+                                    <a href="../Maps/Labelling a Map.jpg" class="project-link" aria-label="View Map Labeling example">
+                                        <i class="fas fa-search-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Cartographic Labeling</h4>
+                                <p>Professional map labeling and annotation techniques</p>
+                                <div class="project-tags">
+                                    <span class="tag">Cartography</span>
+                                    <span class="tag">Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map 5: Peru Wildfire 2001-2025 (Temporal Analysis) -->
+                    <div class="col-lg-8 col-md-12 mb-4" data-aos="fade-up">
+                        <div class="project-card">
+                            <div id="peruWildfireCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#peruWildfireCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="2001-2005"></button>
+                                    <button type="button" data-bs-target="#peruWildfireCarousel" data-bs-slide-to="1" aria-label="2006-2010"></button>
+                                    <button type="button" data-bs-target="#peruWildfireCarousel" data-bs-slide-to="2" aria-label="2011-2015"></button>
+                                    <button type="button" data-bs-target="#peruWildfireCarousel" data-bs-slide-to="3" aria-label="2016-2020"></button>
+                                    <button type="button" data-bs-target="#peruWildfireCarousel" data-bs-slide-to="4" aria-label="2021-2024"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="project-image">
+                                            <img src="../Maps/2001_05.jpg" class="d-block w-100" alt="Peru Wildfire 2001-2005" loading="lazy">
+                                            <div class="project-overlay">
+                                                <a href="../Maps/2001_05.jpg" class="project-link" aria-label="View 2001-2005 map">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </a>
+                                            </div>
+                                            <div class="carousel-caption d-block">
+                                                <h5 class="mb-0">2001-2005</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="project-image">
+                                            <img src="../Maps/2006_10.jpg" class="d-block w-100" alt="Peru Wildfire 2006-2010" loading="lazy">
+                                            <div class="project-overlay">
+                                                <a href="../Maps/2006_10.jpg" class="project-link" aria-label="View 2006-2010 map">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </a>
+                                            </div>
+                                            <div class="carousel-caption d-block">
+                                                <h5 class="mb-0">2006-2010</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="project-image">
+                                            <img src="../Maps/2011_15.jpg" class="d-block w-100" alt="Peru Wildfire 2011-2015" loading="lazy">
+                                            <div class="project-overlay">
+                                                <a href="../Maps/2011_15.jpg" class="project-link" aria-label="View 2011-2015 map">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </a>
+                                            </div>
+                                            <div class="carousel-caption d-block">
+                                                <h5 class="mb-0">2011-2015</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="project-image">
+                                            <img src="../Maps/2016_20.jpg" class="d-block w-100" alt="Peru Wildfire 2016-2020" loading="lazy">
+                                            <div class="project-overlay">
+                                                <a href="../Maps/2016_20.jpg" class="project-link" aria-label="View 2016-2020 map">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </a>
+                                            </div>
+                                            <div class="carousel-caption d-block">
+                                                <h5 class="mb-0">2016-2020</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="project-image">
+                                            <img src="../Maps/2021_24.jpg" class="d-block w-100" alt="Peru Wildfire 2021-2024" loading="lazy">
+                                            <div class="project-overlay">
+                                                <a href="../Maps/2021_24.jpg" class="project-link" aria-label="View 2021-2024 map">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </a>
+                                            </div>
+                                            <div class="carousel-caption d-block">
+                                                <h5 class="mb-0">2021-2024</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#peruWildfireCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#peruWildfireCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="project-content">
+                                <h4>Peru Wildfire 2001-2025</h4>
+                                <p>Temporal analysis of wildfire patterns and trends in Peru spanning 24 years across five time periods</p>
+                                <div class="project-tags">
+                                    <span class="tag">Temporal Analysis</span>
+                                    <span class="tag">Wildfire</span>
+                                    <span class="tag">Time Series</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="social-links mb-3">
+                        <a href="https://linkedin.com/in/annan-shrestha" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/AnnShrestha" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://facebook.com/dial.annan" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/annanstha" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mb-0">&copy; 2025 Annan Shrestha. All rights reserved. | GIS & Spatial Analyst</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Zoom Modal -->
+    <div class="modal" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body p-0 position-relative">
+                    <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close" style="z-index: 10;"></button>
+                    <img src="" alt="" id="modalMapImage" class="img-fluid w-100" style="border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Fast AOS initialization
+        AOS.init({
+            duration: 400,
+            once: true,
+            offset: 50,
+            delay: 0
+        });
+    </script>
+    <script src="../js/main.js"></script>
+    
+    <!-- Map Zoom Script -->
+    <script>
+        // Instant modal - no delays
+        const modalElement = document.getElementById('mapModal');
+        const modalImage = document.getElementById('modalMapImage');
+        const mapLinks = document.querySelectorAll('.project-link');
+        
+        // Preload all images on page load for instant display
+        const imageCache = new Map();
+        mapLinks.forEach(link => {
+            const imgSrc = link.getAttribute('href');
+            const img = new Image();
+            img.src = imgSrc;
+            imageCache.set(imgSrc, img);
+        });
+        
+        // Click handler for instant modal
+        mapLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const imgSrc = this.getAttribute('href');
+                const imgAlt = this.closest('.project-card').querySelector('img').getAttribute('alt');
+                
+                // Use preloaded image for instant display
+                if (imageCache.has(imgSrc)) {
+                    modalImage.src = imageCache.get(imgSrc).src;
+                } else {
+                    modalImage.src = imgSrc;
+                }
+                modalImage.alt = imgAlt;
+                
+                // Show modal immediately
+                modalElement.style.display = 'block';
+                modalElement.classList.add('show');
+                document.body.classList.add('modal-open');
+                
+                // Add backdrop
+                if (!document.querySelector('.modal-backdrop')) {
+                    const backdrop = document.createElement('div');
+                    backdrop.className = 'modal-backdrop show';
+                    document.body.appendChild(backdrop);
+                }
+            }, false);
+        });
+        
+        // Close modal
+        function closeModal() {
+            modalElement.style.display = 'none';
+            modalElement.classList.remove('show');
+            document.body.classList.remove('modal-open');
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) backdrop.remove();
+        }
+        
+        // Close on button click
+        modalElement.querySelector('.btn-close').addEventListener('click', closeModal);
+        
+        // Close on backdrop click
+        modalElement.addEventListener('click', function(e) {
+            if (e.target === modalElement) {
+                closeModal();
+            }
+        });
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modalElement.classList.contains('show')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
