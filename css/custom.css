@@ -1141,7 +1141,7 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: opacity 0.15s ease;
 }
 
 .project-card:hover .project-overlay {
