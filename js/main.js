@@ -531,6 +531,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Animated number counters for hero stats
+    const statNumbers = document.querySelectorAll('.hero-stat-number[data-count]');
+    if (statNumbers.length > 0) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-count'));
+                        const duration = 1500;
+                        const startTime = performance.now();
+                        
+                        function updateCounter(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+                            stat.textContent = Math.round(target * eased);
+                            
+                            if (progress < 1) {
+                                requestAnimationFrame(updateCounter);
+                            }
+                        }
+                        requestAnimationFrame(updateCounter);
+                    });
+                    statsObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsRow = document.querySelector('.hero-stats-row');
+        if (statsRow) statsObserver.observe(statsRow);
+    }
+
     console.log('Portfolio initialized successfully! 🚀');
 });
 
