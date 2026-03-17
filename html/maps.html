@@ -27,32 +27,29 @@
         #peruWildfireCarousel .carousel-control-next {
             transition: opacity 0.2s;
         }
-        /* Ensure smooth and fast slide transitions */
         .carousel-item-next,
         .carousel-item-prev,
         .carousel-item.active {
             transition: transform 0.3s ease-in-out;
         }
         
-        /* Instant modal opening - no fade animation */
-        #mapModal {
-            transition: none !important;
-        }
-        #mapModal .modal-dialog {
-            transition: none !important;
-        }
-        #mapModal.show {
-            display: block !important;
-            opacity: 1 !important;
-        }
-        /* Fast backdrop */
-        .modal-backdrop {
-            transition: opacity 0.1s ease-out !important;
-        }
-        /* Optimize image rendering */
+        /* Instant modal opening */
+        #mapModal { transition: none !important; }
+        #mapModal .modal-dialog { transition: none !important; }
+        #mapModal.show { display: block !important; opacity: 1 !important; }
+        .modal-backdrop { transition: opacity 0.1s ease-out !important; }
         #modalMapImage {
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
+        }
+
+        /* Faster page paint — cards render instantly, no stagger */
+        .project-card {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 350px;
+        }
+        .project-image img {
+            will-change: transform;
         }
     </style>
 </head>
@@ -96,10 +93,10 @@
                 </div>
                 <div class="row">
                     <!-- Map 1: Peaks of Nepal -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="../Maps/Peaks of Nepal.jpg" alt="Peaks of Nepal - Topographic map showing major mountain peaks" loading="lazy">
+                                <img src="../Maps/Peaks of Nepal.jpg" alt="Peaks of Nepal - Topographic map showing major mountain peaks" loading="eager" decoding="async">
                                 <div class="project-overlay">
                                     <a href="../Maps/Peaks of Nepal.jpg" class="project-link" aria-label="View Peaks of Nepal map">
                                         <i class="fas fa-search-plus"></i>
@@ -118,10 +115,10 @@
                     </div>
 
                     <!-- Map 2: Landslide Susceptibility Map -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="../Maps/Landslide Susceptibility Map.jpg" alt="Landslide Susceptibility Map showing risk zones" loading="lazy">
+                                <img src="../Maps/Landslide Susceptibility Map.jpg" alt="Landslide Susceptibility Map showing risk zones" loading="eager" decoding="async">
                                 <div class="project-overlay">
                                     <a href="../Maps/Landslide Susceptibility Map.jpg" class="project-link" aria-label="View Landslide Susceptibility Map">
                                         <i class="fas fa-search-plus"></i>
@@ -140,10 +137,10 @@
                     </div>
 
                     <!-- Map 3: Natural Disaster Displacement -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="../Maps/Natural Disaster Displacement.jpg" alt="Natural Disaster Displacement patterns map" loading="lazy">
+                                <img src="../Maps/Natural Disaster Displacement.jpg" alt="Natural Disaster Displacement patterns map" loading="eager" decoding="async">
                                 <div class="project-overlay">
                                     <a href="../Maps/Natural Disaster Displacement.jpg" class="project-link" aria-label="View Natural Disaster Displacement map">
                                         <i class="fas fa-search-plus"></i>
@@ -162,10 +159,10 @@
                     </div>
 
                     <!-- Map 4: Labelling a Map -->
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 mb-4">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="../Maps/Labelling a Map.jpg" alt="Cartographic labeling demonstration" loading="lazy">
+                                <img src="../Maps/Labelling a Map.jpg" alt="Cartographic labeling demonstration" loading="eager" decoding="async">
                                 <div class="project-overlay">
                                     <a href="../Maps/Labelling a Map.jpg" class="project-link" aria-label="View Map Labeling example">
                                         <i class="fas fa-search-plus"></i>
@@ -184,7 +181,7 @@
                     </div>
 
                     <!-- Map 5: Peru Wildfire 2001-2025 (Temporal Analysis) -->
-                    <div class="col-lg-8 col-md-12 mb-4" data-aos="fade-up">
+                    <div class="col-lg-8 col-md-12 mb-4">
                         <div class="project-card">
                             <div id="peruWildfireCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
                                 <div class="carousel-indicators">
