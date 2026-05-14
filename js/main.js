@@ -42,13 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Hero background element not found');
     }
 
-    // Initialize AOS (Animate On Scroll)
-    AOS.init({
-        duration: 1000,
-        once: true,
-        mirror: false,
-        offset: 100
-    });
+    // Initialize AOS (Animate On Scroll) — skip if already initialized by the page
+    if (!window.aosInitialized) {
+        AOS.init({
+            duration: 400,
+            once: true,
+            mirror: false,
+            offset: 50,
+            delay: 0
+        });
+    }
 
     // Typing animation
     const texts = [
@@ -388,10 +391,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe all sections for enhanced animations
+    // Skip fade-in for sections already visible in the viewport on load
     document.querySelectorAll('section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        const rect = section.getBoundingClientRect();
+        const alreadyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        if (!alreadyVisible) {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        }
         sectionObserver.observe(section);
     });
 

@@ -10,9 +10,13 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🗺️%3C/text%3E%3C/svg%3E">
     <meta name="theme-color" content="#2563eb">
     
+    <!-- Preload LCP images -->
+    <link rel="preload" as="image" href="../Maps/Peaks of Nepal.jpg">
+    <link rel="preload" as="image" href="../Maps/Landslide Susceptibility Map.jpg">
+
     <!-- External CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" rel="stylesheet">
     
     <!-- Custom CSS -->
@@ -43,11 +47,6 @@
             image-rendering: crisp-edges;
         }
 
-        /* Faster page paint — cards render instantly, no stagger */
-        .project-card {
-            content-visibility: auto;
-            contain-intrinsic-size: auto 350px;
-        }
         .project-image img {
             will-change: transform;
         }
@@ -96,7 +95,7 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="../Maps/Peaks of Nepal.jpg" alt="Peaks of Nepal - Topographic map showing major mountain peaks" loading="eager" decoding="async">
+                                <img src="../Maps/Peaks of Nepal.jpg" alt="Peaks of Nepal - Topographic map showing major mountain peaks" loading="eager" decoding="async" fetchpriority="high">
                                 <div class="project-overlay">
                                     <a href="../Maps/Peaks of Nepal.jpg" class="project-link" aria-label="View Peaks of Nepal map">
                                         <i class="fas fa-search-plus"></i>
@@ -278,6 +277,71 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Web Maps Row -->
+                    <div class="col-12 mt-4 mb-3" data-aos="fade-up">
+                        <h3 class="h5 text-muted fw-semibold" style="letter-spacing:.05em; text-transform:uppercase; font-size:.85rem;">Interactive Web Maps</h3>
+                        <hr class="mt-1 mb-4">
+                    </div>
+
+                    <!-- Web Map 1: Wachusett Reservoir Explorer -->
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up">
+                        <div class="project-card h-100">
+                            <div class="project-image" style="background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 40%, #0d7377 70%, #14a085 100%); min-height: 200px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+                                <div style="position:absolute;inset:0;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22%3E%3Ccircle cx=%2230%25%22 cy=%2260%25%22 r=%2218%25%22 fill=%22rgba(255,255,255,0.04)%22/%3E%3Ccircle cx=%2270%25%22 cy=%2240%25%22 r=%2212%25%22 fill=%22rgba(255,255,255,0.04)%22/%3E%3Ccircle cx=%2250%25%22 cy=%2250%25%22 r=%2225%25%22 fill=%22rgba(255,255,255,0.03)%22/%3E%3C/svg%3E');"></div>
+                                <div class="text-center text-white" style="position:relative;z-index:1;padding:2rem;">
+                                    <i class="fas fa-water" style="font-size:3rem;opacity:.85;"></i>
+                                    <p class="mt-2 mb-0 fw-semibold" style="font-size:.9rem;opacity:.9;">Live Interactive Map</p>
+                                </div>
+                                <div class="project-overlay" style="background:rgba(15,76,117,0.75);">
+                                    <a href="https://wachusett-reservoir-explorer.vercel.app/" target="_blank" rel="noopener" class="project-link" aria-label="Open Wachusett Reservoir Explorer">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Wachusett Reservoir Explorer</h4>
+                                <p>Interactive web map exploring the Wachusett Reservoir watershed — water supply infrastructure, land cover, and surrounding protected lands in central Massachusetts.</p>
+                                <div class="project-tags mb-3">
+                                    <span class="tag">Web Map</span>
+                                    <span class="tag">Watershed</span>
+                                    <span class="tag">Interactive</span>
+                                </div>
+                                <a href="https://wachusett-reservoir-explorer.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-primary me-2">
+                                    <i class="fas fa-external-link-alt me-1"></i>Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web Map 2: Shortest Path Finder -->
+                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-card h-100">
+                            <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%); min-height: 200px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+                                <div style="position:absolute;inset:0;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22%3E%3Cline x1=%2220%25%22 y1=%2280%25%22 x2=%2280%25%22 y2=%2220%25%22 stroke=%22rgba(255,255,255,0.08)%22 stroke-width=%222%22/%3E%3Ccircle cx=%2220%25%22 cy=%2280%25%22 r=%224%25%22 fill=%22rgba(255,255,255,0.1)%22/%3E%3Ccircle cx=%2280%25%22 cy=%2220%25%22 r=%224%25%22 fill=%22rgba(255,255,255,0.1)%22/%3E%3Ccircle cx=%2250%25%22 cy=%2250%25%22 r=%222.5%25%22 fill=%22rgba(255,255,255,0.07)%22/%3E%3C/svg%3E');"></div>
+                                <div class="text-center text-white" style="position:relative;z-index:1;padding:2rem;">
+                                    <i class="fas fa-route" style="font-size:3rem;opacity:.85;"></i>
+                                    <p class="mt-2 mb-0 fw-semibold" style="font-size:.9rem;opacity:.9;">Network Analysis Tool</p>
+                                </div>
+                                <div class="project-overlay" style="background:rgba(26,26,46,0.75);">
+                                    <a href="https://github.com/AnnShrestha/Shortest_Path_Finder" target="_blank" rel="noopener" class="project-link" aria-label="View Shortest Path Finder on GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h4>Shortest Path Finder</h4>
+                                <p>Web-based spatial tool for finding optimal routes across road networks using graph-based shortest-path algorithms, built for interactive geographic exploration.</p>
+                                <div class="project-tags mb-3">
+                                    <span class="tag">Network Analysis</span>
+                                    <span class="tag">Routing</span>
+                                    <span class="tag">Web GIS</span>
+                                </div>
+                                <a href="https://github.com/AnnShrestha/Shortest_Path_Finder" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary">
+                                    <i class="fab fa-github me-1"></i>View Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -316,7 +380,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Fast AOS initialization
+        // Fast AOS initialization — set flag so main.js skips its slower re-init
+        window.aosInitialized = true;
         AOS.init({
             duration: 400,
             once: true,

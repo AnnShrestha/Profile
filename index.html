@@ -114,6 +114,9 @@
             <div class="container">
                 <div class="row align-items-center min-vh-100">
                     <div class="col-lg-6" data-aos="fade-right">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="open-to-work-badge"><span class="open-to-work-dot"></span>Open to Opportunities</span>
+                        </div>
                         <h5 class="text-primary mb-3">Welcome to my portfolio</h5>
                         <h1 class="display-3 fw-bold mb-4">
                             I'm <span class="text-gradient">Annan Shrestha</span>
@@ -125,12 +128,13 @@
                             </h3>
                         </div>
                         <p class="lead mb-4 hero-lead">
-                            Geographic Information Science specialist with expertise in spatial analysis, 
+                            Geographic Information Science specialist with expertise in spatial analysis,
                             remote sensing, and environmental mapping. Currently pursuing MS in GIS and Cartography at Clark University.
                         </p>
                         <div class="hero-buttons d-flex flex-column flex-sm-row gap-3">
                             <a href="html/contact.html" class="btn btn-primary btn-lg">Get In Touch</a>
                             <a href="html/projects.html" class="btn btn-outline-primary btn-lg">View Projects</a>
+                            <a href="https://drive.google.com/file/d/1Ibgnxy81Ds-aQUx9bWarzvFwoexpW1kg/view?usp=drive_link" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener"><i class="fas fa-download me-2"></i>Resume</a>
                         </div>
                         <div class="social-links mt-4 d-flex flex-wrap gap-3">
                             <a href="https://linkedin.com/in/annan-shrestha" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -170,13 +174,8 @@
         <!-- Quick About Section -->
         <section id="quick-about" class="section-padding">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 mb-4 mb-lg-0 text-center" data-aos="fade-right">
-                        <div class="quick-about-image">
-                            <img src="images/about-me1.png" alt="Annan Shrestha working with GIS" class="img-fluid rounded-4 shadow" loading="lazy">
-                        </div>
-                    </div>
-                    <div class="col-lg-7" data-aos="fade-left">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-9" data-aos="fade-up">
                         <h5 class="text-primary fw-semibold mb-2">Who I Am</h5>
                         <h2 class="fw-bold mb-3">Passionate about turning spatial data into actionable insights</h2>
                         <p class="mb-3" style="font-size: 1.05rem; color: var(--secondary);">
@@ -347,11 +346,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- Service Worker Registration - Disabled for Development -->
+    <!-- Service Worker Registration -->
     <script>
-        // Service Worker disabled during development to allow live reloading
-        // Uncomment the code below for production deployment
-        /*
         if ('serviceWorker' in navigator && location.protocol !== 'file:') {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
@@ -363,7 +359,6 @@
                     });
             });
         }
-        */
     </script>
 </body>
 </html>
