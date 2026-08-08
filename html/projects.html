@@ -61,13 +61,23 @@
         <section id="projects" class="section-padding bg-light" style="padding-top: 120px;">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                    <div class="col-lg-12 text-center mb-4" data-aos="fade-up">
                         <h2 class="section-title">Featured Projects</h2>
                         <div class="section-divider"></div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="col-12 text-center mb-4" data-aos="fade-up">
+                        <div class="project-filter-bar" role="group" aria-label="Filter projects by category">
+                            <button type="button" class="project-filter-btn active" data-filter="all">All</button>
+                            <button type="button" class="project-filter-btn" data-filter="environmental">Environmental</button>
+                            <button type="button" class="project-filter-btn" data-filter="wildlife">Wildlife</button>
+                            <button type="button" class="project-filter-btn" data-filter="hazard">Hazard &amp; Risk</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="projects-grid">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-category="environmental">
                         <div class="project-card">
                             <div class="project-image">
                                 <img src="../images/proj_1.jpg" alt="Soil erosion mapping using RUSLE method in Bagmati Province, Nepal showing erosion rates" loading="lazy">
@@ -88,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-category="wildlife">
                         <div class="project-card">
                             <div class="project-image">
                                 <img src="../images/proj_2.jpg" alt="African elephant habitat suitability model in Tarangire National Park using GPS tracking data" loading="lazy">
@@ -109,7 +119,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-category="hazard">
                         <div class="project-card">
                             <div class="project-image">
                                 <img src="../images/proj_3.jpg" alt="Flood overland flow modeling and risk assessment map for West Rapti Basin" loading="lazy">
@@ -130,7 +140,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-category="hazard">
                         <div class="project-card">
                             <div class="project-image">
                                 <img src="../images/Inventory.jpg" alt="Multi-hazard risk assessment and mapping for Sindhupalchowk District, Nepal" loading="lazy">
@@ -174,7 +184,7 @@
                         <a href="https://facebook.com/dial.annan" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://instagram.com/annanstha" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <p class="mb-0">&copy; 2026 Annan Shrestha. All rights reserved. | GIS & Spatial Analyst</p>
+                    <p class="mb-0">&copy; 2026 Annan Shrestha. All rights reserved. | Senior GIS Administrator</p>
                 </div>
             </div>
         </div>
@@ -190,6 +200,18 @@
             once: true,
             offset: 50,
             delay: 0
+        });
+
+        // Project category filter
+        document.querySelectorAll('.project-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.project-filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('#projects-grid > [data-category]').forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+                });
+            });
         });
     </script>
     <script src="../js/main.js"></script>
